@@ -1,0 +1,8 @@
+default: &default
+  adapter: oracle_enhanced
+
+development:
+  <<: *default
+  database: oracle.cise.ufl.edu/ORCL
+  username: amly
+  password: "!!Aims1992"

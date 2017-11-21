@@ -4,5 +4,5 @@ default: &default
 development:
   <<: *default
   database: oracle.cise.ufl.edu/ORCL
-  username:
-  password: 
+  username: amly
+  password: Hello123

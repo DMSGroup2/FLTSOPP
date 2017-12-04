@@ -1,0 +1,57 @@
+<%= form_with(model: located_at, local: true) do |form| %>
+  <% if located_at.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(located_at.errors.count, "error") %> prohibited this located_at from being saved:</h2>
+
+      <ul>
+      <% located_at.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :stop_date %>
+    <%= form.text_field :stop_date, id: :located_at_stop_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stop_time %>
+    <%= form.text_field :stop_time, id: :located_at_stop_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :county_fips %>
+    <%= form.number_field :county_fips, id: :located_at_county_fips %>
+  </div>
+
+  <div class="field">
+    <%= form.label :driver_gender %>
+    <%= form.text_field :driver_gender, id: :located_at_driver_gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :driver_race %>
+    <%= form.text_field :driver_race, id: :located_at_driver_race %>
+  </div>
+
+  <div class="field">
+    <%= form.label :driver_age %>
+    <%= form.number_field :driver_age, id: :located_at_driver_age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :officer_id %>
+    <%= form.text_field :officer_id, id: :located_at_officer_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :violation_id %>
+    <%= form.text_field :violation_id, id: :located_at_violation_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

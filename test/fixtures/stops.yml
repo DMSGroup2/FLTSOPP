@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  officer: one
+  driver_gender: MyString
+  driver_race: MyString
+  driver_age: 1
+
+two:
+  officer: two
+  driver_gender: MyString
+  driver_race: MyString
+  driver_age: 1

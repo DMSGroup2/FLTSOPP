@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :violations
+  resources :stops
+  resources :officers
+  resources :locations
+  resources :located_ats
+  resources :gives
+  resources :drivers
   get 'welcome/index'
 
   root 'welcome#index'

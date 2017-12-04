@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gives</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Officer</th>
+      <th>Violation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gives.each do |gife| %>
+      <tr>
+        <td><%= gife.officer %></td>
+        <td><%= gife.violation %></td>
+        <td><%= link_to 'Show', gife %></td>
+        <td><%= link_to 'Edit', edit_gife_path(gife) %></td>
+        <td><%= link_to 'Destroy', gife, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gife', new_gife_path %>

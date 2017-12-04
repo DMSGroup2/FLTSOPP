@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stop_date: MyString
+  stop_time: MyString
+  county_fips: 1
+  county_name: MyString
+
+two:
+  stop_date: MyString
+  stop_time: MyString
+  county_fips: 1
+  county_name: MyString

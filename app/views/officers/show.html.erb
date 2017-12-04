@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Officer gender:</strong>
+  <%= @officer.officer_gender %>
+</p>
+
+<p>
+  <strong>Officer age:</strong>
+  <%= @officer.officer_age %>
+</p>
+
+<p>
+  <strong>Officer race:</strong>
+  <%= @officer.officer_race %>
+</p>
+
+<p>
+  <strong>Officer rank:</strong>
+  <%= @officer.officer_rank %>
+</p>
+
+<%= link_to 'Edit', edit_officer_path(@officer) %> |
+<%= link_to 'Back', officers_path %>

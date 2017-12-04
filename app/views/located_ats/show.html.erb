@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Stop date:</strong>
+  <%= @located_at.stop_date %>
+</p>
+
+<p>
+  <strong>Stop time:</strong>
+  <%= @located_at.stop_time %>
+</p>
+
+<p>
+  <strong>County fips:</strong>
+  <%= @located_at.county_fips %>
+</p>
+
+<p>
+  <strong>Driver gender:</strong>
+  <%= @located_at.driver_gender %>
+</p>
+
+<p>
+  <strong>Driver race:</strong>
+  <%= @located_at.driver_race %>
+</p>
+
+<p>
+  <strong>Driver age:</strong>
+  <%= @located_at.driver_age %>
+</p>
+
+<p>
+  <strong>Officer:</strong>
+  <%= @located_at.officer %>
+</p>
+
+<p>
+  <strong>Violation:</strong>
+  <%= @located_at.violation %>
+</p>
+
+<%= link_to 'Edit', edit_located_at_path(@located_at) %> |
+<%= link_to 'Back', located_ats_path %>

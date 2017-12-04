@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Located Ats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Stop date</th>
+      <th>Stop time</th>
+      <th>County fips</th>
+      <th>Driver gender</th>
+      <th>Driver race</th>
+      <th>Driver age</th>
+      <th>Officer</th>
+      <th>Violation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @located_ats.each do |located_at| %>
+      <tr>
+        <td><%= located_at.stop_date %></td>
+        <td><%= located_at.stop_time %></td>
+        <td><%= located_at.county_fips %></td>
+        <td><%= located_at.driver_gender %></td>
+        <td><%= located_at.driver_race %></td>
+        <td><%= located_at.driver_age %></td>
+        <td><%= located_at.officer %></td>
+        <td><%= located_at.violation %></td>
+        <td><%= link_to 'Show', located_at %></td>
+        <td><%= link_to 'Edit', edit_located_at_path(located_at) %></td>
+        <td><%= link_to 'Destroy', located_at, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Located At', new_located_at_path %>

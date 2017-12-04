@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  is_out_of_state: MyString
+  driver_race: MyString
+  driver_age: 1
+  driver_gender: MyString
+
+two:
+  is_out_of_state: MyString
+  driver_race: MyString
+  driver_age: 1
+  driver_gender: MyString

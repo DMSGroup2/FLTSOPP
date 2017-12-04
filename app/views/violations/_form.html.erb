@@ -1,0 +1,32 @@
+<%= form_with(model: violation, local: true) do |form| %>
+  <% if violation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(violation.errors.count, "error") %> prohibited this violation from being saved:</h2>
+
+      <ul>
+      <% violation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :violation_type %>
+    <%= form.text_field :violation_type, id: :violation_violation_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stop_outcome %>
+    <%= form.text_field :stop_outcome, id: :violation_stop_outcome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_arrested %>
+    <%= form.text_field :is_arrested, id: :violation_is_arrested %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

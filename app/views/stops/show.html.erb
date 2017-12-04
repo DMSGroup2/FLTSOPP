@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Officer:</strong>
+  <%= @stop.officer %>
+</p>
+
+<p>
+  <strong>Driver gender:</strong>
+  <%= @stop.driver_gender %>
+</p>
+
+<p>
+  <strong>Driver race:</strong>
+  <%= @stop.driver_race %>
+</p>
+
+<p>
+  <strong>Driver age:</strong>
+  <%= @stop.driver_age %>
+</p>
+
+<%= link_to 'Edit', edit_stop_path(@stop) %> |
+<%= link_to 'Back', stops_path %>

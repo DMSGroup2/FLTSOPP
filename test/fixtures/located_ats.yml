@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stop_date: MyString
+  stop_time: MyString
+  county_fips: 1
+  driver_gender: MyString
+  driver_race: MyString
+  driver_age: 1
+  officer: one
+  violation: one
+
+two:
+  stop_date: MyString
+  stop_time: MyString
+  county_fips: 1
+  driver_gender: MyString
+  driver_race: MyString
+  driver_age: 1
+  officer: two
+  violation: two

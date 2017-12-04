@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  officer_gender: MyString
+  officer_age: 1
+  officer_race: MyString
+  officer_rank: MyString
+
+two:
+  officer_gender: MyString
+  officer_age: 1
+  officer_race: MyString
+  officer_rank: MyString

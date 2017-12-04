@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Stop date:</strong>
+  <%= @location.stop_date %>
+</p>
+
+<p>
+  <strong>Stop time:</strong>
+  <%= @location.stop_time %>
+</p>
+
+<p>
+  <strong>County fips:</strong>
+  <%= @location.county_fips %>
+</p>
+
+<p>
+  <strong>County name:</strong>
+  <%= @location.county_name %>
+</p>
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>

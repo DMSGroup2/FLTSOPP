@@ -12,18 +12,11 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
-  create_table "driver", primary_key: "violation_id", id: :string, limit: 14, force: :cascade do |t|
+  create_table "drivers", primary_key: "violation_id", id: :string, limit: 14, force: :cascade do |t|
     t.string "is_out_of_state", limit: 5
     t.string "driver_race", limit: 10
     t.integer "driver_age", limit: 3, precision: 3
     t.string "driver_gender", limit: 1
-  end
-
-  create_table "drivers", force: :cascade do |t|
-    t.integer "age", precision: 38
-    t.string "race"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "gives", primary_key: ["violation_id", "officer_id"], force: :cascade do |t|
@@ -42,14 +35,14 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "violation_id", limit: 14, null: false
   end
 
-  create_table "location", primary_key: ["stop_date", "stop_time", "county_fips"], force: :cascade do |t|
+  create_table "locations", primary_key: ["stop_date", "stop_time", "county_fips"], force: :cascade do |t|
     t.string "stop_date", limit: 8, null: false
     t.string "stop_time", limit: 5, null: false
     t.integer "county_fips", limit: 5, precision: 5, null: false
     t.string "county_name", limit: 20
   end
 
-  create_table "officer", primary_key: "officer_id", id: :string, limit: 5, force: :cascade do |t|
+  create_table "officers", primary_key: "officer_id", id: :string, limit: 5, force: :cascade do |t|
     t.string "officer_gender", limit: 1
     t.integer "officer_age", limit: 3, precision: 3
     t.string "officer_race", limit: 10
@@ -63,11 +56,11 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "driver_age", limit: 3, precision: 3
   end
 
-  create_table "violation", primary_key: "violation_id", id: :string, limit: 14, force: :cascade do |t|
+  create_table "violations", primary_key: "violation_id", id: :string, limit: 14, force: :cascade do |t|
     t.string "violation_type", limit: 100
     t.string "stop_outcome", limit: 30
     t.string "is_arrested", limit: 6
   end
 
-  add_foreign_key "driver", "violation", primary_key: "violation_id", name: "sys_c00548566"
+  add_foreign_key "drivers", "violations", primary_key: "violation_id", name: "sys_c00548973"
 end

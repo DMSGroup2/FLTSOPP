@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Is out of state:</strong>
+  <%= @driver.is_out_of_state %>
+</p>
+
+<p>
+  <strong>Driver race:</strong>
+  <%= @driver.driver_race %>
+</p>
+
+<p>
+  <strong>Driver age:</strong>
+  <%= @driver.driver_age %>
+</p>
+
+<p>
+  <strong>Driver gender:</strong>
+  <%= @driver.driver_gender %>
+</p>
+
+<%= link_to 'Edit', edit_driver_path(@driver) %> |
+<%= link_to 'Back', drivers_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Violation type:</strong>
+  <%= @violation.violation_type %>
+</p>
+
+<p>
+  <strong>Stop outcome:</strong>
+  <%= @violation.stop_outcome %>
+</p>
+
+<p>
+  <strong>Is arrested:</strong>
+  <%= @violation.is_arrested %>
+</p>
+
+<%= link_to 'Edit', edit_violation_path(@violation) %> |
+<%= link_to 'Back', violations_path %>

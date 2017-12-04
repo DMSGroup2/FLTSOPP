@@ -1,0 +1,37 @@
+<%= form_with(model: stop, local: true) do |form| %>
+  <% if stop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stop.errors.count, "error") %> prohibited this stop from being saved:</h2>
+
+      <ul>
+      <% stop.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :officer_id %>
+    <%= form.text_field :officer_id, id: :stop_officer_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :driver_gender %>
+    <%= form.text_field :driver_gender, id: :stop_driver_gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :driver_race %>
+    <%= form.text_field :driver_race, id: :stop_driver_race %>
+  </div>
+
+  <div class="field">
+    <%= form.label :driver_age %>
+    <%= form.number_field :driver_age, id: :stop_driver_age %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

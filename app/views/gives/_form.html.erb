@@ -1,0 +1,27 @@
+<%= form_with(model: gife, local: true) do |form| %>
+  <% if gife.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gife.errors.count, "error") %> prohibited this gife from being saved:</h2>
+
+      <ul>
+      <% gife.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :officer_id %>
+    <%= form.text_field :officer_id, id: :gife_officer_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :violation_id %>
+    <%= form.text_field :violation_id, id: :gife_violation_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

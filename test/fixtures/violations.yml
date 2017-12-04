@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  violation_type: MyString
+  stop_outcome: MyString
+  is_arrested: MyString
+
+two:
+  violation_type: MyString
+  stop_outcome: MyString
+  is_arrested: MyString

@@ -1,33 +1,20 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Counties</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'drivers', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
 
-<h1>Locations</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Stop date</th>
-      <th>Stop time</th>
-      <th>County fips</th>
-      <th>County name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @locations.each do |location| %>
-      <tr>
-        <td><%= location.stop_date %></td>
-        <td><%= location.stop_time %></td>
-        <td><%= location.county_fips %></td>
-        <td><%= location.county_name %></td>
-        <td><%= link_to 'Show', location %></td>
-        <td><%= link_to 'Edit', edit_location_path(location) %></td>
-        <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Location', new_location_path %>
+<body>
+  <h1>County Query Selection</h1>
+  <div class="btn-list">
+      <a id="qButton" href="#">The county with the highest number of violations cited</a>
+      <a id="qButton" href="#">The county with the least number of violations cited</a>
+      <a id="qButton" href="#">Top 5 counties with most violations overall</a>
+      <a id="qButton" href="#">Top 5 counties with most violations for each month</a>
+      <a id="qButton" href="#">The top violation type for each county</a>
+      <a id="qButton" href="#">County with greatest number of type violation X (X=speeding or X=DUI)</a>
+      <a id="qButton" href="#">Top 5 counties with greatest number of violations resulting in arrest</a>
+  </div>
+</body>

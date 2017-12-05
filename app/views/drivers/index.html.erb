@@ -8,12 +8,10 @@
 
 <body>
   <h1>Driver Query Selection</h1>
-  <tbody>
-    <% @drivers.each do |driver| %>
-      <tr>
-        <td><%= driver.driver_race %></td>
-      </tr>
-    <% end %>
-  </tbody>
-
+  <div class="btn-list">
+      <a id="qButton" href="#">Percentage of women versus males given violations in a given month</a>
+      <a id="qButton" href="#">Ratio of the warnings to citations for each race</a>
+      <a id="qButton" href="#">Top 5 races cited the most for speeding</a>
+      <a id="qButton" href="#">Top 5 violations by gender</a>
+  </div>
 </body>

@@ -4,7 +4,12 @@ class DriversController < ApplicationController
   # GET /drivers
   # GET /drivers.json
   def index
-    @drivers = Driver.all
+    @drivers = Driver.lastone
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @drivers }
+    end
   end
 
   # GET /drivers/1

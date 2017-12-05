@@ -10,9 +10,21 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( welcome.css )
 Rails.application.config.assets.precompile += %w( welcome.js )
 Rails.application.config.assets.precompile += %w( about.css )
-Rails.application.config.assets.precompile += %w( v_query.css )
-Rails.application.config.assets.precompile += %w( demo_query.css )
-Rails.application.config.assets.precompile += %w( gen_query.css )
+
+#drivers
+Rails.application.config.assets.precompile += %w( drivers.css )
+
+#officers
+Rails.application.config.assets.precompile += %w( officers.css )
+
+#violations
+Rails.application.config.assets.precompile += %w( violations.css )
+
+#locations
+Rails.application.config.assets.precompile += %w( locations.css )
+
+
+
 
 
 # Precompile additional assets.

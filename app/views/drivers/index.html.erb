@@ -3,15 +3,17 @@
 <head>
   <title>Drivers</title>
   <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'application' %>
   <%= stylesheet_link_tag    'drivers', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 
 <body>
   <h1>Driver Query Selection</h1>
   <div class="btn-list">
-      <a id="qButton" href="#">Percentage of women versus males given violations in a given month</a>
-      <a id="qButton" href="#">Ratio of the warnings to citations for each race</a>
-      <a id="qButton" href="#">Top 5 races cited the most for speeding</a>
-      <a id="qButton" href="#">Top 5 violations by gender</a>
+      <a href="/d_query">Percentage of women versus males given violations in a given month</a>
+      <button id="qButton" href="#">Ratio of the warnings to citations for each race</button>
+      <button id="qButton" href="#">Top 5 races cited the most for speeding</button>
+      <button id="qButton" href="#">Top 5 violations by gender</button>
   </div>
 </body>

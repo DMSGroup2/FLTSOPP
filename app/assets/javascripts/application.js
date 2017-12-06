@@ -13,3 +13,12 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require chartkick
+
+$(document).on("click", function(e){
+    if($(e.target).is("#qButton")){
+      $("#result").show();
+    }else{
+        $("#result").hide();
+    }
+});

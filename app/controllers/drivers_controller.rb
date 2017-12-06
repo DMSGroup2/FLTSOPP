@@ -1,15 +1,17 @@
 class DriversController < ApplicationController
   before_action :set_driver, only: [:show, :edit, :update, :destroy]
-
-  # GET /drivers
-  # GET /drivers.json
-  def index
+  def query
     @drivers = Driver.lastone
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @drivers }
     end
+  end
+
+  # GET /drivers
+  # GET /drivers.json
+  def index
   end
 
   # GET /drivers/1

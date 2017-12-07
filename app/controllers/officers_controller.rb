@@ -4,7 +4,12 @@ class OfficersController < ApplicationController
   # GET /officers
   # GET /officers.json
   def index
-    @officers = Officer.all
+    @officers1 = Officer.q1
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @officers1 }
+    end
   end
 
   # GET /officers/1

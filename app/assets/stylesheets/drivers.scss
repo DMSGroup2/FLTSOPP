@@ -6,6 +6,13 @@ h1 {
   color: white;
 }
 
+h4 {
+  background-color: white;
+  margin-bottom: 0;
+  text-align: center;
+  color: black;
+}
+
 .btn-list {
   text-align: center;
 }
@@ -17,4 +24,9 @@ h1 {
   color: black;
   padding: 5px;
   margin: 5px;
+}
+
+.result {
+  height: 500px;
+  color: white;
 }

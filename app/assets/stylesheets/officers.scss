@@ -1,3 +1,30 @@
 // Place all the styles related to the Officers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+h1 {
+  text-align: center;
+  color: white;
+}
+
+h4 {
+  background-color: white;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+#qButton {
+  text-decoration: none;
+  display: block;
+  background-color: #F8F8F8;
+  color: black;
+  padding: 5px;
+  margin: 5px;
+}
+
+.result {
+  height: 500px;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  display: table;
+}

@@ -15,18 +15,22 @@
     <a id="qButton" href="javascript:showhide('r1')">
       Which is the race most frequently stopped?
     </a>
-    <div id="r1" style="display:none;">
-      <% @drivers.each do |driver| %>
+    <div class="result" id="r1" style="display:none;">
+      <% @drivers1.each do |driver| %>
         <tr>
-          <td><%= driver.driver_race %></td>
+          <h4><%= driver.driver_race %></h4>
         </tr>
       <% end %>
     </div>
 
     <a id="qButton" href="javascript:showhide('r2')">
-      What are all the violation types of Hispanic men under 30 years old?
+      Drivers charged for DUI versus speeding by race
     </a>
-    <div id="r2" style="display:none;">
+    <div class="result" id="r2" style="display:none;">
+      <h4>DUI</h4>
+      <%= pie_chart @drivers2.pluck(:race2,:dui_count) %>
+      <h4>Speeding</h4>
+      <%= pie_chart @drivers2.pluck(:race2,:speed_count) %>
     </div>
   </div>
 </body>

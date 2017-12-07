@@ -3,14 +3,26 @@
 <head>
   <title>Violation</title>
   <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag    'drivers', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag    'violations', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
+  <%= javascript_include_tag 'http://yandex.st/bootstrap/3.1.1/js/bootstrap.min.js' %>
 </head>
 
 <body>
   <h1>Violation Query Selection</h1>
   <div class="btn-list">
-      <a id="qButton" href="#">What is the most common violation committed</a>
-      <a id="qButton" href="#">How many violations occurred in any given month</a>
-      <a id="qButton" href="#">What time of day is a DUI most likely to occur</a>
+    <a id="qButton" href="javascript:showhide('r1')">
+      Count of each violation type committed
+    </a>
+    <div class=“result” id="r1" style="display:none;">
+      <%= bar_chart @violations1.pluck(:violation_type,:v_count) %>
+    </div>
+
+    <a id="qButton" href="javascript:showhide('r2')">
+      How many violations occurred in any given month
+    </a>
+    <div class=“result” id="r2" style="display:none;">
+    </div>
   </div>
 </body>

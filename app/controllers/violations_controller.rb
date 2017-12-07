@@ -4,7 +4,12 @@ class ViolationsController < ApplicationController
   # GET /violations
   # GET /violations.json
   def index
-    @violations = Violation.all
+    @violations1 = Violation.q1
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @violations1 }
+    end  
   end
 
   # GET /violations/1

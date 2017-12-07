@@ -27,7 +27,7 @@
       DUI count of all counties
     </a>
     <div class="result" id="r2" style="display:none;">
-      <%= column_chart @locations2.pluck(:county_name,:dui_count), xtitle: "Counties", ytitle: "DUI Count" %>
+      <%= column_chart @locations2.pluck(:county_name,:dui_count) %>
     </div>
 
   </div>

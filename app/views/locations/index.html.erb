@@ -3,18 +3,39 @@
 <head>
   <title>Counties</title>
   <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag    'drivers', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag    'locations', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
+  <%= javascript_include_tag 'http://yandex.st/bootstrap/3.1.1/js/bootstrap.min.js' %>
 </head>
 
 <body>
   <h1>County Query Selection</h1>
   <div class="btn-list">
-      <a id="qButton" href="#">The county with the highest number of violations cited</a>
-      <a id="qButton" href="#">The county with the least number of violations cited</a>
-      <a id="qButton" href="#">Top 5 counties with most violations overall</a>
-      <a id="qButton" href="#">Top 5 counties with most violations for each month</a>
-      <a id="qButton" href="#">The top violation type for each county</a>
-      <a id="qButton" href="#">County with greatest number of type violation X (X=speeding or X=DUI)</a>
-      <a id="qButton" href="#">Top 5 counties with greatest number of violations resulting in arrest</a>
+    <a id="qButton" href="javascript:showhide('r1')">
+      The county with the highest number of violations cited
+    </a>
+    <div class="result" id="r1" style="display:none;">
+      <% @locations1.each do |location| %>
+        <tr>
+          <td><%= location.county_name %></td>
+        </tr>
+      <% end %>
+    </div>
+
+    <a id="qButton" href="javascript:showhide('r2')">
+      DUI count of all counties
+    </a>
+    <div class="result" id="r2" style="display:none;">
+      <%= column_chart @locations2.pluck(:county_name,:dui_count), xtitle: "Counties", ytitle: "DUI Count" %>
+    </div>
+
   </div>
 </body>
+
+<a id="" href="#">The county with the least number of violations cited</a>
+<a id="" href="#">Top 5 counties with most violations overall</a>
+<a id="" href="#">Top 5 counties with most violations for each month</a>
+<a id="" href="#">The top violation type for each county</a>
+<a id="" href="#">County with greatest number of type violation X (X=speeding or X=DUI)</a>
+<a id="" href="#">Top 5 counties with greatest number of violations resulting in arrest</a>

@@ -4,7 +4,19 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all
+    @locations1 = Location.q1
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @locations1 }
+    end
+
+    @locations2 = Location.q2
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @locations2 }
+    end  
   end
 
   # GET /locations/1

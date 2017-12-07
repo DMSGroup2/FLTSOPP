@@ -5,15 +5,28 @@
   <%= csrf_meta_tags %>
   <%= javascript_include_tag 'application' %>
   <%= stylesheet_link_tag    'drivers', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
+  <%= javascript_include_tag 'http://yandex.st/bootstrap/3.1.1/js/bootstrap.min.js' %>
 </head>
 
 <body>
   <h1>Driver Query Selection</h1>
   <div class="btn-list">
-      <a href="/d_query">Percentage of women versus males given violations in a given month</a>
-      <button id="qButton" href="#">Ratio of the warnings to citations for each race</button>
-      <button id="qButton" href="#">Top 5 races cited the most for speeding</button>
-      <button id="qButton" href="#">Top 5 violations by gender</button>
+    <a id="qButton" href="javascript:showhide('r1')">
+      Which is the race most frequently stopped?
+    </a>
+    <div id="r1" style="display:none;">
+      <% @drivers.each do |driver| %>
+        <tr>
+          <td><%= driver.driver_race %></td>
+        </tr>
+      <% end %>
+    </div>
+
+    <a id="qButton" href="javascript:showhide('r2')">
+      What are all the violation types of Hispanic men under 30 years old?
+    </a>
+    <div id="r2" style="display:none;">
+    </div>
   </div>
 </body>

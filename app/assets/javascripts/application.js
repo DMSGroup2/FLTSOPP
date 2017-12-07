@@ -15,10 +15,7 @@
 //= require_tree .
 //= require chartkick
 
-$(document).on("click", function(e){
-    if($(e.target).is("#qButton")){
-      $("#result").show();
-    }else{
-        $("#result").hide();
-    }
-});
+function showhide(id) {
+     var e = document.getElementById(id);
+     e.style.display = (e.style.display == 'block') ? 'none' : 'block';
+  }

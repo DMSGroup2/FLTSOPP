@@ -9,7 +9,14 @@ class ViolationsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @violations1 }
-    end  
+    end
+
+    @violations2 = Violation.q2
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @violations2 }
+    end
   end
 
   # GET /violations/1

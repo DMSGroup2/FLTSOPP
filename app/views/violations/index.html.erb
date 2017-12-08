@@ -20,9 +20,10 @@
     </div>
 
     <a id="qButton" href="javascript:showhide('r2')">
-      How many violations occurred in any given month
+      How many violations occurred in any given day
     </a>
     <div class=“result” id="r2" style="display:none;">
+      <%= line_chart @violations2.pluck(:stop_date,:v_count) %>
     </div>
   </div>
 </body>

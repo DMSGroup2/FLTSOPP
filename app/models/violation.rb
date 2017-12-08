@@ -52,4 +52,10 @@ class Violation < ApplicationRecord
                 group by violation_type)
                 order by v_count desc")
   end
+
+  def self.q2
+    find_by_sql("SELECT stop_date, COUNT(violation_id) as v_count
+                FROM located_at
+                GROUP BY stop_date")
+    end            
 end

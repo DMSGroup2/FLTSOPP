@@ -16,17 +16,34 @@ class Location < ApplicationRecord
     end
 
     def self.q2
-      find_by_sql("select county_name, COALESCE(sum(dui),0) as dui_count
-                  from locations
-                  left join
-                  (select county_fips as fips, count(*) as dui
-                  from violations v
-                  join located_at l on
+      find_by_sql("SELECT county_name, COALESCE(SUM(dui),0) as dui_count
+                  FROM locations
+                  LEFT JOIN
+                  (SELECT county_fips as fips, COUNT(*) as dui
+                  FROM violations v
+                  JOIN located_at l ON
                   v.violation_id = l.violation_id
-                  where violation_type LIKE 'DUI'
-                  group by county_fips)
-                  on county_fips = fips
-                  group by county_name
-                  order by COALESCE(sum(dui),0) desc")
+                  WHERE violation_type LIKE 'DUI'
+                  GROUP BY county_fips)
+                  ON county_fips = fips
+                  GROUP BY county_name
+                  ORDER BY COALESCE(SUM(dui),0) DESC")
+    end
+
+    def self.q3
+      find_by_sql("SELECT * FROM
+                  (SELECT county, speed_count, RANK() OVER (ORDER BY speed_count DESC) as rank
+                  FROM
+                  (SELECT county, COUNT(v_type) as speed_count
+                  FROM
+                  ( SELECT DISTINCT county_name as county, located_at.violation_id as v_id, violation_type as v_type
+                  FROM located_at
+                  JOIN locations ON
+                  located_at.county_fips = locations.county_fips
+                  JOIN violations ON
+                  located_at.violation_id = violations.violation_id )
+                  WHERE v_type LIKE 'Speeding'
+                  GROUP BY county))
+                  WHERE RANK <= 5")
     end
 end

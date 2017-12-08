@@ -24,18 +24,14 @@
     </div>
 
     <a id="qButton" href="javascript:showhide('r2')">
+      Top violation issued by officer of each race
     </a>
     <div class=“result” id="r2" style="display:none;">
-    </div>
-
-    <a id="qButton" href="javascript:showhide('r1')">
-    </a>
-    <div class=“result” id="r3" style="display:none;">
-    </div>
-
-    <a id="qButton" href="javascript:showhide('r2')">
-    </a>
-    <div class=“result” id="r4" style="display:none;">
+      <% @officers2.each do |officer| %>
+        <tr>
+          <p><%= officer.race %> : <%= officer.v_type %></p>
+        </tr>  
+      <% end %>
     </div>
   </div>
 </body>

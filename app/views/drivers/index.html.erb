@@ -13,12 +13,12 @@
   <h1>Driver Query Selection</h1>
   <div class="btn-list">
     <a id="qButton" href="javascript:showhide('r1')">
-      Which is the race most frequently stopped?
+      Which race is most frequently stopped?
     </a>
     <div class="result" id="r1" style="display:none;">
       <% @drivers1.each do |driver| %>
         <tr>
-          <h4><%= driver.driver_race %></h4>
+          <p><%= driver.driver_race %></p>
         </tr>
       <% end %>
     </div>

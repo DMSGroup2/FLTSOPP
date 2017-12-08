@@ -24,18 +24,23 @@
     </div>
 
     <a id="qButton" href="javascript:showhide('r2')">
-      DUI count of all counties
+      DUI count for all counties
     </a>
     <div class="result" id="r2" style="display:none;">
       <%= column_chart @locations2.pluck(:county_name,:dui_count) %>
     </div>
 
+    <a id="qButton" href="javascript:showhide('r3')">
+      Top 5 counties with most speeding violations
+    </a>
+    <div class="result" id="r3" style="display:none;">
+      <% @locations3.each do |location| %>
+        <tr>
+          <td><%= location.rank %></td>
+          <td><%= location.county %></td>
+          <br>
+        </tr>
+      <% end %>
+    </div>
   </div>
 </body>
-
-<a id="" href="#">The county with the least number of violations cited</a>
-<a id="" href="#">Top 5 counties with most violations overall</a>
-<a id="" href="#">Top 5 counties with most violations for each month</a>
-<a id="" href="#">The top violation type for each county</a>
-<a id="" href="#">County with greatest number of type violation X (X=speeding or X=DUI)</a>
-<a id="" href="#">Top 5 counties with greatest number of violations resulting in arrest</a>

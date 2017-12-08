@@ -10,6 +10,13 @@ class OfficersController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @officers1 }
     end
+
+    @officers2 = Officer.q2
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @officers2 }
+    end
   end
 
   # GET /officers/1

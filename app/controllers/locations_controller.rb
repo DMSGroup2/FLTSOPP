@@ -16,8 +16,16 @@ class LocationsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @locations2 }
-    end  
-  end
+    end
+
+
+    @locations3 = Location.q3
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @locations3 }
+    end
+end
 
   # GET /locations/1
   # GET /locations/1.json

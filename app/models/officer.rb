@@ -23,4 +23,17 @@ class Officer < ApplicationRecord
                 group by officer_gender)
                 on gender1 = gender2")
   end
+
+  def self.q2
+    find_by_sql("SELECT
+        officers.officer_race as race,
+        STATS_MODE(violations.violation_type) AS v_type
+    FROM
+        located_at
+        INNER JOIN violations ON located_at.violation_id = violations.violation_id
+        INNER JOIN officers ON located_at.officer_id = officers.officer_id
+    WHERE officer_race IS NOT NULL
+    GROUP BY
+        officers.officer_race")
+    end
 end

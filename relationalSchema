@@ -1,0 +1,56 @@
+Relational Database Schema
+
+Officer: information about the officer involved in the stop
+   officer_id: the unique identifying ID of the officer
+   officer_gender: the gender of the officer
+   officer_age: the age of the officer
+   officer_rank: the rank of the officer
+   officer_race: the race of the officer
+
+Driver: information about the driver involved in the stop
+   driver_age: the age of the driver
+   driver_race: the race of the driver
+   driver_gender: the gender of the driver
+   is_out_of_state: information regarding in state or out of state status
+
+Violation: information about the violation 
+   violation_id: the unique id of the violation
+   violation_type: the type(s) of violations that made a stop necessary
+   stop_outcome: the consequence of the stop for the driver
+   search_conducted: denotes whether a search was performed
+   search_type: was the search authorized by consent or probable cause
+   is_arrested: was the driver arrested
+
+Location: information about where and when the stop happened
+   stop_date: the date of the stop
+   stop_time: the time of the stop
+   county_fips: the county code where the stop happened
+   county_name: the name of the county where the stop happened
+      
+(take primary keys from each set?)
+located_at: information about the county where a violation occurred (m:1)
+violation_type: the type of violation at the location
+driver_age: the age of the driver at the location
+driver_race: the race of the driver at the location
+driver_gender: the gender of the driver at the location
+stop_date: date of the stop
+stop_time: time of the stop
+
+gives: information about relationship between an officer and a violation given (1:m)
+violation_ID: id of the violation
+violation_type: type of violation given 
+
+stops: information about relationship between an officer and a driver (1:m)
+officer_id: id of officer involved in stop
+driver_age: age of driver
+driver_race: race of driver
+driver_gender: gender of driver
+stop_date: date of stop
+stop_time: time of the stop
+
+commits: information about relationship between driver and violation 
+violation_type: the violation committed by a driver
+violation_id: the id of the violation
+driver_age: age of the driver
+driver_race: race of the driver
+driver_gender: gender of the driver
